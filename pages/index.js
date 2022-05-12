@@ -1,5 +1,6 @@
 import { createClient } from 'contentful';
 import { BlogCard } from '../src/components/Blogcard/BlogCard';
+import { BrowseAll } from '../src/components/BrowseAll/BrowseAll';
 
 export default function BlogHome({ blog }) {
   return (
@@ -14,6 +15,7 @@ export default function BlogHome({ blog }) {
       </div>
       <div className="browse-section">
         <h2>Browse All Section</h2>
+        <BrowseAll blogs={blog} />
       </div>
     </div>
   );
