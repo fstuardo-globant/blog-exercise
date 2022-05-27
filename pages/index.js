@@ -1,6 +1,6 @@
-import { createClient } from 'contentful';
-import { BlogCard } from '../src/components/Blogcard/BlogCard';
-import { BrowseAll } from '../src/components/BrowseAll/BrowseAll';
+import { createClient } from "contentful";
+import { BlogCard } from "../src/components/Blogcard/BlogCard";
+import { BrowseAll } from "../src/components/BrowseAll/BrowseAll";
 
 export default function BlogHome({ blog }) {
   return (
@@ -8,7 +8,7 @@ export default function BlogHome({ blog }) {
       <h2>Most Popular</h2>
       <div className="popular-section row row-cols-3">
         {blog.slice(0, 6).map((blogs) => (
-          <div key={''} className="mb-4">
+          <div key={""} className="mb-4">
             <BlogCard key={blogs.sys.id} blogs={blogs} />
           </div>
         ))}
@@ -28,7 +28,7 @@ export const getStaticProps = async () => {
   });
 
   const res = await client.getEntries({
-    content_type: 'blog',
+    content_type: "blog",
   });
 
   return {

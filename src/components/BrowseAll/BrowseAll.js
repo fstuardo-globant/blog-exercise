@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BlogCard } from '../Blogcard/BlogCard';
+import React, { useState } from "react";
+import { BlogCard } from "../Blogcard/BlogCard";
 
 export const BrowseAll = ({ blogs }) => {
   const filterTopics = blogs.map((blog) => blog.fields.topic);

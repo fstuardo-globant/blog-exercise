@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 export const BlogCard = ({ blogs }) => {
   const { title, slugs, thumbnail, blogDates, topic } = blogs.fields;
@@ -9,7 +9,7 @@ export const BlogCard = ({ blogs }) => {
     <div className="card">
       <div className="thumbnail">
         <Image
-          src={'https:' + thumbnail.fields.file.url}
+          src={"https:" + thumbnail.fields.file.url}
           width={thumbnail.fields.file.details.image.width}
           height={thumbnail.fields.file.details.image.height}
           alt=""
@@ -24,7 +24,7 @@ export const BlogCard = ({ blogs }) => {
           <p>{blogDates} | Author</p>
         </div>
         <div className="more-info"></div>
-        <Link href={'/blog/' + slugs} passHref>
+        <Link href={"/blog/" + slugs} passHref>
           <a className="card-link" />
         </Link>
       </div>
