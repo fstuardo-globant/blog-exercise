@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 export const BlogCard = ({ blogs }) => {
-  const { title, slugs, thumbnail, blogDates, topic } = blogs.fields;
+  const { title, slugs, thumbnail, blogDates, topic } = blogs;
 
   return (
     <div className="card">
@@ -13,6 +13,7 @@ export const BlogCard = ({ blogs }) => {
           width={thumbnail.fields.file.details.image.width}
           height={thumbnail.fields.file.details.image.height}
           alt=""
+          layout="responsive"
         />
       </div>
       <div className="content">

@@ -5,11 +5,11 @@ const Layout: React.FC = ({ children }) => {
   return (
     <div className="container">
       <header>
-        <Link href="/">
-          <a>
-            <h1>Blog Home</h1>
-          </a>
-        </Link>
+        <h1>
+          <Link href="/">
+            <a>Blog Home</a>
+          </Link>
+        </h1>
       </header>
       <div className="page-content">
         <main>{children}</main>

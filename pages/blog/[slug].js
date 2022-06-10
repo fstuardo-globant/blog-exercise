@@ -1,42 +1,31 @@
-import { createClient } from 'contentful';
+import { fetchBlogs } from '../../src/services/contentful.ts';
 import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-});
+export async function getStaticPaths() {
+  let items;
+  items = await fetchBlogs();
 
-export const getStaticPaths = async () => {
-  const res = await client.getEntries({
-    content_type: 'blog',
-  });
-
-  const paths = res.items.map((item) => {
+  const paths = items.map((item) => {
     return {
-      params: { slug: item.fields.slugs },
+      params: { slug: item.slugs },
     };
   });
-
   return {
     paths: paths,
     fallback: false,
   };
-};
+}
 
-export const getStaticProps = async ({ params }) => {
-  const { items } = await client.getEntries({
-    content_type: 'blog',
-    'fields.slugs': params.slug,
-  });
-  return {
-    props: { blog: items[0] },
-  };
-};
+export async function getStaticProps({ params }) {
+  const slugs = params.slug;
+  let items = await fetchBlogs(slugs);
+  return { props: { blog: items[0] } };
+}
 
 export default function BlogDetails({ blog }) {
-  const { featureImage, title } = blog.fields;
-  const { content } = blog.fields.textDescription;
+  const { featureImage, title } = blog;
+  const { content } = blog.textDescription;
   return (
     <div>
       <div className="banner">
