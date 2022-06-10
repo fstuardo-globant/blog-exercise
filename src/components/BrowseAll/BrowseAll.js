@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BlogCard } from '../Blogcard/BlogCard';
+import React, { useState } from "react";
+import { BlogCard } from "../Blogcard/BlogCard";
 
 export const BrowseAll = ({ blogs }) => {
   const filterTopics = blogs.map((blog) => blog.topic);
@@ -15,7 +15,7 @@ export const BrowseAll = ({ blogs }) => {
 
   const handleOnChange = (e) => {
     const filter = e.target.value;
-    if (filter !== '') {
+    if (filter !== "") {
       const filterBlogList = blogs.filter((blog) => blog.topic === filter);
       setBlogsList(filterBlogList);
     } else {

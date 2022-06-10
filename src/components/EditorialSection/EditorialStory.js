@@ -1,6 +1,6 @@
-import { fetchBlogs } from '../../services/contentful.ts';
-import { BlogCard } from '../Blogcard/BlogCard';
-import { BlogList } from '../BlogList';
+import { fetchBlogs } from "../../services/contentful.ts";
+import { BlogCard } from "../Blogcard/BlogCard";
+import { BlogList } from "../BlogList";
 
 export default function EditorialStory({ blog }) {
   return (

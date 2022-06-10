@@ -1,5 +1,5 @@
 //not used in this exercise
-import { Entry } from 'contentful';
+import { Entry } from "contentful";
 
 export interface IImage {
   url: string;

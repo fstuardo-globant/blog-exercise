@@ -1,17 +1,17 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 export const BlogList = ({ blogs }) => {
   const { title, slugs, thumbnail, blogDates, topic } = blogs;
 
   return (
-    <Link href={'/blog/' + slugs} passHref>
+    <Link href={"/blog/" + slugs} passHref>
       <a href="!#" className="card-link-editorial">
         <div className="card d-flex flex-row align-items-center p-1">
           <div className="thumbnail-editorial">
             <Image
-              src={'https:' + thumbnail.fields.file.url}
+              src={"https:" + thumbnail.fields.file.url}
               width={150}
               height={100}
               alt=""

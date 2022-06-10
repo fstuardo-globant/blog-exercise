@@ -1,4 +1,4 @@
-import { createClient, CreateClientParams, Entry } from 'contentful';
+import { createClient, CreateClientParams, Entry } from "contentful";
 
 export interface IBlog {
   title: string;
@@ -18,8 +18,8 @@ const params = {
 export const fetchBlogs = async (slugs = null) => {
   const client = createClient(params);
   const { items } = await client.getEntries({
-    content_type: 'blog',
-    'fields.slugs': slugs ? slugs : null,
+    content_type: "blog",
+    "fields.slugs": slugs ? slugs : null,
   });
   const blogs: Array<Object> = items.map((blog: Entry<any>): IBlog => {
     const { fields } = blog;
